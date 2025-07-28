@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ThinkType-Text-Correction-Completion-by-Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(135deg, #dbeafe, #f0f9ff);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 35px 20px;
+      background: linear-gradient(to right, #3b82f6, #1e3a8a);
+      color: white;
+      font-size: 2.2rem;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      letter-spacing: 1px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 50px 30px;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+
+    .box {
+      background: white;
+      border-radius: 18px;
+      padding: 30px;
+      width: 420px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .box h2 {
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1d4ed8;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 1rem;
+      resize: vertical;
+      min-height: 100px;
+      transition: border 0.2s ease;
+    }
+
+    textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px 24px;
+      background: linear-gradient(to right, #3b82f6, #2563eb);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #2563eb, #1e40af);
+    }
+
+    .output {
+      margin-top: 20px;
+      background: #f1f5f9;
+      padding: 15px;
+      border-left: 4px solid #3b82f6;
+      border-radius: 10px;
+      color: #334155;
+      font-size: 1rem;
+      white-space: pre-wrap;
+      min-height: 60px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: linear-gradient(to right, #3b82f6, #1e3a8a);
+      color: #fff;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .box {
+        width: 100%;
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h3 class="text-2xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text">ThinkType</h3>
+    <p style="font-size: 24px; color: #d1d5db;">Text Correction & Completion by Us.</p>
+  </header>
+
+  <div class="container">
+    <!-- Autocorrect Section -->
+    <div class="box">
+      <h2>Autocorrect</h2>
+      <textarea id="autocorrectInput" placeholder="Enter a sentence with possible errors..."></textarea>
+      <button onclick="handleAutocorrect()">Correct</button>
+      <div class="output" id="autocorrectOutput">Corrected sentence will appear here.</div>
+    </div>
+
+    <!-- Autocomplete Section -->
+    <div class="box">
+      <h2>Autocomplete</h2>
+      <textarea id="autocompleteInput" placeholder="Start typing a sentence..."></textarea>
+      <button onclick="handleAutocomplete()">Complete</button>
+      <div class="output" id="autocompleteOutput">Predicted completion will appear here.</div>
+    </div>
+  </div>
+
+  <script>
+    async function handleAutocorrect() {
+      const input = document.getElementById("autocorrectInput").value;
+      const res = await fetch("/autocorrect", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ input })
+      });
+      const data = await res.json();
+      document.getElementById("autocorrectOutput").innerText = data.output;
+    }
+
+    async function handleAutocomplete() {
+      const input = document.getElementById("autocompleteInput").value;
+      const res = await fetch("/autocomplete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ input })
+      });
+      const data = await res.json();
+      document.getElementById("autocompleteOutput").innerText = data.output;
+    }
+  </script>
+
+  <footer>
+    Developed by Gagandeep D – Final Year CSE | UI/UX & Aspiring Data Analyst 
+  </footer>
+
+</body>
+</html>

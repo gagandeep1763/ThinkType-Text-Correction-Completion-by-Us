@@ -1,0 +1,4 @@
+flask
+happytransformer
+transformers
+torch

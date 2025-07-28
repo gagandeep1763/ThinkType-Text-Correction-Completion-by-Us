@@ -54,8 +54,6 @@ Project Structure:
 Model Used
 vennify/t5-base-grammar-correction
 
-Powered by the HappyTextToText interface of HappyTransformer
-
 Credits
 
 Developed entirely by us for learning and implementation purposes.

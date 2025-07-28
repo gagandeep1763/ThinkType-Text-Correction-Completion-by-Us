@@ -1,42 +1,33 @@
-from flask import Flask, request, jsonify, render_template
-from main import correct_text, complete_text
+from happytransformer import HappyTextToText, TTSettings
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
-# Home route to render frontend
-@app.route('/')
-def index():
-    return render_template('index.html')  # Make sure 'index.html' exists inside the 'templates' folder
+# Load the model
+happy_tt = HappyTextToText("T5", "t5-small")
 
-# Route for grammar correction
-@app.route('/autocorrect', methods=['POST'])
-def autocorrect():
+# Define generation settings
+custom_args = TTSettings(num_beams=1, min_length=1, max_length=30)
+
+@app.route("/correct", methods=["POST"])
+def correct_text():
     data = request.get_json()
-    input_text = data.get('input', '').strip()
+    input_text = data.get("text", "")
+    result = happy_tt.generate_text("grammar: " + input_text, args=custom_args)
+    return jsonify({"output": result.text})
 
-    if not input_text:
-        return jsonify({'output': 'No input provided'}), 400
-
-    try:
-        corrected = correct_text(input_text)
-        return jsonify({'output': corrected})
-    except Exception as e:
-        return jsonify({'output': f'Error: {str(e)}'}), 500
-
-# Route for text completion
-@app.route('/autocomplete', methods=['POST'])
-def autocomplete():
+@app.route("/complete", methods=["POST"])
+def complete_text():
     data = request.get_json()
-    input_text = data.get('input', '').strip()
+    input_text = data.get("text", "")
+    result = happy_tt.generate_text("complete: " + input_text, args=custom_args)
+    return jsonify({"output": result.text})
 
-    if not input_text:
-        return jsonify({'output': 'No input provided'}), 400
+@app.route("/")
+def home():
+    return "Grammar Correction & Text Completion API using T5-small"
 
-    try:
-        completed = complete_text(input_text)
-        return jsonify({'output': completed})
-    except Exception as e:
-        return jsonify({'output': f'Error: {str(e)}'}), 500
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)

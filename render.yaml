@@ -1,2 +1,10 @@
 build:
   pythonVersion: 3.10.13
+services:
+  - type: web
+    name: autocomplete-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    plan: free
+    region: oregon

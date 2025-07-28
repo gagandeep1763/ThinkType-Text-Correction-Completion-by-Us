@@ -59,7 +59,8 @@ Credits
 Developed entirely by us for learning and implementation purposes.
 No third-party UI templates used.
 
-Developed By
+Developed By: 
+
 Gagandeep D
 Google Certified UI/UX Designer
 Aspiring Data Analyst

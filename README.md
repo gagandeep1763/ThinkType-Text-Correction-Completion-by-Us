@@ -25,43 +25,38 @@ Easy to extend or deploy
 How to Run
 Clone the repository:
 
-bash
-Copy
-Edit
-git clone https://github.com/your-username/thinktype.git
-cd thinktype
+git clone: https://github.com/gagandeep1763/ThinkType-Text-Correction-Completion-by-Us
+
 Install the required packages:
 
-bash
-Copy
-Edit
 pip install -r requirements.txt
+
 Run the application:
 
-bash
-Copy
-Edit
 python app.py
+
 Open your browser and go to http://127.0.0.1:5000/
 
-Project Structure
-cpp
-Copy
-Edit
+Project Structure: 
+
 ├── app.py
 ├── main.py
 ├── templates/
 │   └── index.html
-├── static/
-│   └── (optional: css or js files if added)
 ├── requirements.txt
 └── README.md
+
 Model Used
 vennify/t5-base-grammar-correction
 
 Powered by the HappyTextToText interface of HappyTransformer
 
 Credits
+
 Developed entirely by us for learning and implementation purposes.
 No third-party UI templates used.
 
+Developed By
+Gagandeep D
+Google Certified UI/UX Designer
+Aspiring Data Analyst

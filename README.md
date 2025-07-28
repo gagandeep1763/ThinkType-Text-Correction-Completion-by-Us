@@ -40,10 +40,15 @@ Open your browser and go to http://127.0.0.1:5000/
 Project Structure: 
 
 ├── app.py
+
 ├── main.py
+
 ├── templates/
+
 │   └── index.html
+
 ├── requirements.txt
+
 └── README.md
 
 Model Used

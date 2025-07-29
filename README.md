@@ -4,66 +4,78 @@ A simple web-based application that performs grammar correction and text complet
 
 ![ThinkType Screenshot](https://github.com/gagandeep1763/ThinkType-Text-Correction-Completion-by-Us/blob/main/image.png?raw=true)
 
-Overview
-ThinkType is a lightweight and effective tool for improving user-typed text. It offers two key features:
+# ThinkType: Text Correction & Completion
 
-Autocorrect: Automatically corrects grammar and spelling errors in the input.
+ThinkType is a lightweight and effective tool for improving user-typed text.  
+It offers two key features:
 
-Autocomplete: Suggests possible text completions for partially typed sentences.
+- **Autocorrect:** Automatically corrects grammar and spelling errors in the input.
+- **Autocomplete:** Suggests possible text completions for partially typed sentences.
 
-This project is fully built from scratch using Python (Flask) and the happytransformer library.
+This project is fully built from scratch using Python (Flask) and the [Happy Transformer](https://github.com/EricFillion/happy-transformer) library.
 
-Features: 
-Built using Flask for backend
+---
 
-Uses Happy Transformer with T5 model for NLP tasks
+## Features
 
-Minimal and clean UI with gradients
+- Built using Flask for backend
+- Uses Happy Transformer with T5 model for NLP tasks
+- Minimal and clean UI with gradients
+- Responsive layout
+- Easy to extend or deploy
 
-Responsive layout
+---
 
-Easy to extend or deploy
+## How to Run
 
-How to Run
-Clone the repository:
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/gagandeep1763/ThinkType-Text-Correction-Completion-by-Us
+    cd ThinkType-Text-Correction-Completion-by-Us
+    ```
 
-git clone: https://github.com/gagandeep1763/ThinkType-Text-Correction-Completion-by-Us
+2. **Install the required packages:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
-Install the required packages:
+3. **Run the application:**
+    ```bash
+    python app.py
+    ```
 
-pip install -r requirements.txt
+4. **Open your browser and go to:**
+    ```
+    http://127.0.0.1:5000/
+    ```
 
-Run the application:
+---
 
-python app.py
+## Project Structure
 
-Open your browser and go to http://127.0.0.1:5000/
-
-Project Structure: 
-
+```
 ├── app.py
-
 ├── main.py
-
 ├── templates/
-
 │   └── index.html
-
 ├── requirements.txt
-
 └── README.md
+```
 
-Model Used
-vennify/t5-base-grammar-correction
+---
 
-Credits
+## Model Used
 
-Developed entirely by us for learning and implementation purposes.
+- [`vennify/t5-base-grammar-correction`](https://huggingface.co/vennify/t5-base-grammar-correction)
+
+---
+
+## Credits
+
+Developed entirely by us for learning and implementation purposes.  
 No third-party UI templates used.
 
-Developed By: 
-
-Gagandeep D
-
-Google Certified UI/UX Designer
-Aspiring Data Analyst
+**Developed By:**  
+Gagandeep D  
+Google Certified UI/UX Designer  
+Aspiring

@@ -3,4 +3,5 @@ flask-cors
 happytransformer==2.4
 transformers==4.11.3
 torch==2.5.0
-
+sentencepiece==0.1.99
+tokenizers==0.10.3

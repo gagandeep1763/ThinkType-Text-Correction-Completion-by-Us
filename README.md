@@ -2,6 +2,8 @@
 ThinkType – Text Correction & Completion by Us
 A simple web-based application that performs grammar correction and text completion using a pre-trained transformer model (T5).
 
+![ThinkType Screenshot](https://github.com/gagandeep1763/ThinkType-Text-Correction-Completion-by-Us/blob/main/image.png?raw=true)
+
 Overview
 ThinkType is a lightweight and effective tool for improving user-typed text. It offers two key features:
 

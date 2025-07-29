@@ -4,8 +4,6 @@ A simple web-based application that performs grammar correction and text complet
 
 ![ThinkType Screenshot](https://github.com/gagandeep1763/ThinkType-Text-Correction-Completion-by-Us/blob/main/image.png?raw=true)
 
-# ThinkType: Text Correction & Completion
-
 ThinkType is a lightweight and effective tool for improving user-typed text.  
 It offers two key features:
 

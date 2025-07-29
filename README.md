@@ -31,7 +31,6 @@ This project is fully built from scratch using Python (Flask) and the [Happy Tra
 1. **Clone the repository:**
     ```bash
     git clone https://github.com/gagandeep1763/ThinkType-Text-Correction-Completion-by-Us
-    cd ThinkType-Text-Correction-Completion-by-Us
     ```
 
 2. **Install the required packages:**
@@ -77,5 +76,5 @@ No third-party UI templates used.
 
 **Developed By:**  
 Gagandeep D  
-Google Certified UI/UX Designer  
-Aspiring
+Google Certified UI/UX Designer  & 
+Aspiring Data Analyst
